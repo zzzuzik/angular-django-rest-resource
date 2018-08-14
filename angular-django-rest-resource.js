@@ -272,7 +272,7 @@ var djangoRESTResources = angular.module('djangoRESTResources', ['ng']).
       }
 
       forEach(actions, function(action, name) {
-        action.method = angular.uppercase(action.method);
+        action.method = action.method.toUpperCase();
         var hasBody = action.method == 'POST' || action.method == 'PUT' || action.method == 'PATCH';
         DjangoRESTResource[name] = function(a1, a2, a3, a4) {
           var params = {};
